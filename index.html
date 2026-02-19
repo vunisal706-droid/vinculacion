@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64,AAABAAEAEBAAAAAAIADcAAAAFgAAAIlQTkcNChoKAAAADUlIRFIAAAAQAAAAEAgGAAAAH/P/YQAAAKNJREFUeJxjZICB8BX/GUgBKyMYGRgYGJjI0oykh5EszUiAiRLNDAwMDIwnBPT+MzAwMJi/v4gpGbESzv6/IhxD/qSgPhVd8PXIAawKnJt3MeytdcMqx23jQLkLWMwPXmJgYGBg2EeGZvODlyAuYGxbQbYL4OkAWygTigXGiJVUCANyNDFW20EYyuQkZeWpcOb/1kOku+B/6yEUPlleYGBAeAMAcpEvf+YuDjQAAAAASUVORK5CYII=">
+  <link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAA2ElEQVR4nGNkQAbhK/4z0AOsjGCEMRnpajEWhzANiMVIgHHAfA9zwAkBvQF1wIBHwagDGP9fZMBMA0QmC8aIlXD2/xXhxNl4iRGFO+AhMOoAFsa2FRiC/1cwMOy7+p4kg4hR76QtyIBu38CHAC4JJ21BkgwiVT1BB9AqCtDBaBSMRsGAR8GAh8CoA3CmAVoAxmo7BgZlKOduNv0cwFhthymoPBUiR5dmOdQyGPjfegjuKNqnASyWI9N0SYToljIwMNAxBNAcgWw5AwOd0wBy3MMAXcsBbLkBACYNRuKCarY2AAAAAElFTkSuQmCC">
+  <link rel="apple-touch-icon" sizes="180x180" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAYAAAA9zQYyAAAEFUlEQVR4nO3dvXHbWBiGUcDjAtY1bLgzW4KDbULuwSU4VgnuQW7CgSKnDjZ0DVsCHawwQ0EkgAtcEJfvnBNahIjBPPoMED/suzUenk6rloMS3z71pYssX0DEHGlh3PMvEjItmQn73eTCYqY1M01erl3I3IML0/rthBYz9+JCq9O7HHBnXgdtOnNvRs2+u/YDuBtn7drlIMr/QZvO3LuXhk1oogiaKL3dDZKY0EQRNFH6H3/8bZeDGCY0UQRNFEETRdBEETRRBE0UQRNF0EQRNFEETRRBE0XQRBE0UQRNFEETpT/97FwPTQwTmiiCJoqgiSJoogiaKIImiqCJImiiCJoogiaKoIkiaKIImiiCJoqgieIrKYhiQhPl/dErcHp6OHoVquk/fVu9rO1QhwlNFEETRdBEETRRBE0UQRNF0EQRNFEETRRBE0XQRBE0UQRNFEETRdBEETRRBE0UQRNF0EQRNFEETRRBE+Xwxxhc8/3f/45ehUn//PVh9/ewDcqZ0EQRNFEETRRBE6XZg8IWDzhuzTYoZ0ITRdBEETRRBE0UQRNF0EQRNFEETRRBE0XQRBE0UQRNlGYvTnK3hm2whglNFEETRdBEETRRmj0obPGA49Zsg3ImNFEETRRBE0XQRBE0UQRNFEETRdBEETRRBE0UQRNF0ERp9uIkd2vYBmuY0EQRNFEETRRBE6XZg8IWDzhuzTYoZ0ITRdBEETRRBE0UQRNF0EQRNFEETRRBE0XQRBE0UQRNFEETRdBEETRRBE0UQROl2TtWCPLn1/nX/Ppc5a0ETX1LAp5bZmXggqaa/svHer9sCLwwbEGzWdWQxwrDFjSr7Rry2MKwfcrBKjeN+dzM/rmgKXZYzIOJqAVNkcNjHlyJWtAs1kzMgwtRC5pFmot5MIpa0MxqNubBWdSCZlLzMQ9eohY0zTs9Pi9+bd89PJ12XBfu2ZprMio7j3nJ/xYmNM0aT+Ylk1rQXHbwdL4W71zUgqY5c9FO/VzQvHXgdF6yWzG1Ly1omrE15q4TNI2oEXPXCZoG1Iq56wTNWAOfPY+VnK0UNJuVnMkrXbb01Lug2WQI8vT4XBx27Zi7TtBUtjTqPWLuOkGzwdTZvKlg94q56wTNSksm8aXXbNnfXkLQ7Op8Wtf8eO4aQVNszZS9RcxdJ2hW6L98rH4nS63fJ2heK3iWXK0Ia/5xCJpNtk7r2pNe0FSxJsw9bsAVNNVMTevxv+91N7mgeWvj0/Tnot7z0Qju+uaySlfdnR6fb/psD0FzXYOXks6xy0EUQXNdpW+muplfnwVNFkEz7V6m9Mt6Cpp5rUd9tn6CZplWox6tl6BZrrWoL6yPoCnTStRX1kPQlDs66on3FzTrHBX1zPv6amTWG+K6xSnyhX9AvwEe4OGgASqmigAAAABJRU5ErkJggg==">
+  <link rel="icon" type="image/png" sizes="192x192" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAEXklEQVR4nO3dvZHTXBiGYYmhAL4aCJmhBAKaWHqgBGJKoIelCQIiUgJCavhKMAGrweO1rR+fI+n4ua6E2Vl7rdG8tw7ySt6+W+Lh8bDoeVDT1w/93KfMe4LBpwUzQpj2QINPiyaEcP0BBp97cCWEFxefZPi5F1dm+XwAhp97c2Gmnwdg+LlXZ2b7xdgD4K6czPjlcwAI8C8AR39SHM26FYBofwNw9CfN08xbAYjWO/qTzApANAEQTQBE63+8euscgFhWAKIJgGgCIJoAiCYAogmAaAIgmgCIJgCiCYBoAiCaAIgmAKIJgGgCIJoAiNYffnZuiCGWFYBoAiCaAIgmAKIJgGgCIJoAiCYAogmAaAIgmgCIJgCiCYBoAiCaAIgmAKL5K5FEswIQ7eXWGzA4PD5svQnV9B++Ln6u/VKXFYBoAiCaAIgmAKIJgGgCIJoAiCYAogmAaAIgmgCIJgCiCYBoAiCaAIgmAKIJgGgCIJoAiCYAogmAaAIgmgCIJgCi7eaDsa759uv/rTdhkvdv/lvtteyTMqwARBMA0QRANAEQrYmT4L2fSG3BPinDCkA0ARBNAEQTANEEQDQBEE0ARBMA0QRANAEQTQBEEwDRBEA0ARCticuh3f/6nH1ShhWAaAIgmgCIJgCiNXESvPcTqS3YJ2VYAYgmAKIJgGgCIJoAiCYAogmAaAIgmgCIJgCiCYBoAiCaAIgmAKI1cTm0+1+fs0/KsAIQTQBEEwDRBEC0Jk6C934itQX7pAwrANEEQDQBEE0ARBMA0QRANAEQTQBEEwDRBEA0ARBNAEQTANEEQDQBEE0ARBMA0Zq4I4wQr79Me9zvj8VeUgBsZ+rAjz3vhiAEwOr6T+/K/sAhiAUhCIDVFB/8UwtCEADVVR/8UzNC8C4QVa0+/McmnGMIgGo2Hf7BSAQCoIpdDP/gSgQCoLhdDf/gQgQCoKhdDv/gTAQCoJhdD//gJAIBUEQTwz84ikAA3GxPw3/4/H3aA58i6LuHx0PF7SHB0mt6Cjse/klR/v5oBeBGOxz+c1+f9fqLAGjfpWGfEoEAWG4HR/+xIR/7vgC4a2PnAgJgmQaO/lNOhAVAk0oMf9cJgAaVGv6uEwCNKTn8XScAltjo//+Tf8s7gwBowpThX3JJhgBYxS1H71rD33UCYAXDAC+JoObwd50AqOzcNTpTQ6g9/F0nACq6NsAlTmhLXIYtAKqYMuDXVoPSb3deIgCq6D+9mzykcy9lLnkDjhtimG/m7wFKvn9f+u4zKwDVzVkNxn5OaQJgvoUfR76ne4cHAmBVS1eDWvEIgE3MGeiaK4cA2My51WDs69IEwDIF/07XMOSX/q3J26Ast4PbIm9lBWC5gqvAVgRANAFwm5ZXAR+NSDoBcLsWV4GnbRYAZbQUwdG2CoByWojgZBsFQFl7juDMtgmA8vYYwYVtEgB17CmCK9siAOrZQwQj2yAA6toyggmv/XKFzSDdMIhrXTw3I7o/ddTtngozuuoAAAAASUVORK5CYII=">
+  <link rel="icon" type="image/png" sizes="512x512" href="data:image/png;base64,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">
+  <link rel="manifest" href="data:application/manifest+json;base64,eyJuYW1lIjogIkNFSVAgQ2FwaXR1bGFjaW9uZXMiLCAic2hvcnRfbmFtZSI6ICJDRUlQIENhcC4iLCAiaWNvbnMiOiBbeyJzcmMiOiAiZGF0YTppbWFnZS9wbmc7YmFzZTY0LGlWQk9SdzBLR2dvQUFBQU5TVWhFVWdBQUFNQUFBQURBQ0FZQUFBQlMzR3dIQUFBRVhrbEVRVlI0bk8zZHZaSFRYQmlHWVltaEFMNGFDSm1oQkFLYVdIcWdCR0pLb0llbENRSWlVZ0pDYXZoS01BR3J3ZU8xclIrZkkrbjR1YTZFMlZsN3JkRzh0dzd5U3Q2K1crTGg4YkRvZVZEVDF3LzkzS2ZNZTRMQnB3VXpRcGoyUUlOUGl5YUVjUDBCQnA5N2NDV0VGeGVmWlBpNUYxZG0rWHdBaHA5N2MyR21ud2RnK0xsWFoyYjd4ZGdENEs2Y3pQamxjd0FJOEM4QVIzOVNITTI2RllCb2Z3Tnc5Q2ZOMDh4YkFZaldPL3FUekFwQU5BRVFUUUJFNjMrOGV1c2NnRmhXQUtJSmdHZ0NJSm9BaUNZQW9nbUFhQUlnbWdDSUpnQ2lDWUJvQWlDYUFJZ21BS0lKZ0dnQ0lKb0FpTllmZm5adWlDR1dGWUJvQWlDYUFJZ21BS0lKZ0dnQ0lKb0FpQ1lBb2dtQWFBSWdtZ0NJSmdDaUNZQm9BaUNhQUlnbUFLTDVLNUZFc3dJUTdlWFdHekE0UEQ1c3ZRblY5QisrTG42dS9WS1hGWUJvQWlDYUFJZ21BS0lKZ0dnQ0lKb0FpQ1lBb2dtQWFBSWdtZ0NJSmdDaUNZQm9BaUNhQUlnbUFLSUpnR2dDSUpvQWlDWUFvZ21BYUFJZ21nQ0lKZ0NpN2VhRHNhNzU5dXYvclRkaGt2ZHYvbHZ0dGV5VE1xd0FSQk1BMFFSQU5BRVFyWW1UNEwyZlNHM0JQaW5EQ2tBMEFSQk5BRVFUQU5FRVFEUUJFRTBBUkJNQTBRUkFOQUVRVFFCRUV3RFJCRUEwQVJDdGljdWgzZi82bkgxU2hoV0FhQUlnbWdDSUpnQ2lOWEVTdlBjVHFTM1lKMlZZQVlnbUFLSUpnR2dDSUpvQWlDWUFvZ21BYUFJZ21nQ0lKZ0NpQ1lCb0FpQ2FBSWdtQUtJMWNUbTArMStmczAvS3NBSVFUUUJFRXdEUkJFQzBKazZDOTM0aXRRWDdwQXdyQU5FRVFEUUJFRTBBUkJNQTBRUkFOQUVRVFFCRUV3RFJCRUEwQVJCTkFFUVRBTkVFUURRQkVFMEFSQk1BMFpxNEk0d1FyNzlNZTl6dmo4VmVVZ0JzWityQWp6M3ZoaUFFd09yNlQrL0svc0FoaUFVaENJRFZGQi84VXd0Q0VBRFZWUi84VXpOQzhDNFFWYTArL01jbW5HTUlnR28ySGY3QlNBUUNvSXBkRFAvZ1NnUUNvTGhkRGYvZ1FnUUNvS2hkRHYvZ1RBUUNvSmhkRC8vZ0pBSUJVRVFUd3o4NGlrQUEzR3hQdzMvNC9IM2FBNThpNkx1SHgwUEY3U0hCMG10NkNqc2Uva2xSL3Y1b0JlQkdPeHorYzErZjlmcUxBR2pmcFdHZkVvRUFXRzRIUi8reElSLzd2Z0M0YTJQbkFnSmdtUWFPL2xOT2hBVkFrMG9NZjljSmdBYVZHdjZ1RXdDTktUbjhYU2NBbHRqby8vK1RmOHM3Z3dCb3dwVGhYM0pKaGdCWXhTMUg3MXJEMzNVQ1lBWERBQytKb09id2Q1MEFxT3pjTlRwVFE2ZzkvRjBuQUNxNk5zQWxUbWhMWElZdEFLcVlNdURYVm9QU2IzZGVJZ0NxNkQrOW16eWtjeTlsTG5rRGpodGltRy9tN3dGS3ZuOWYrdTR6S3dEVnpWa054bjVPYVFKZ3ZvVWZSNzZuZTRjSEFtQlZTMWVEV3ZFSWdFM01HZWlhSzRjQTJNeTUxV0RzNjlJRXdESUYvMDdYTU9TWC9xM0oyNkFzdDRQYkltOWxCV0M1Z3F2QVZnUkFOQUZ3bTVaWEFSK05TRG9CY0xzV1Y0R25iUllBWmJRVXdkRzJDb0J5V29qZ1pCc0ZRRmw3anVETXRnbUE4dllZd1lWdEVnQjE3Q21DSzlzaUFPclpRd1FqMnlBQTZ0b3lnZ212L1hLRnpTRGRNSWhyWFR3M0k3by9kZFR0bmdvenV1b0FBQUFBU1VWT1JLNUNZSUk9IiwgInNpemVzIjogIjE5MngxOTIiLCAidHlwZSI6ICJpbWFnZS9wbmcifSwgeyJzcmMiOiAiZGF0YTppbWFnZS9wbmc7YmFzZTY0LGlWQk9SdzBLR2dvQUFBQU5TVWhFVWdBQUFnQUFBQUlBQ0FZQUFBRDBlTlQ2QUFBTngwbEVRVlI0bk8zZHY1RWJSeHJHNGNiVkJuQ01nU2FyTGdRWlRHS1ZBME9RelJDWXd5b0pHclRPUFlNbVkyQUllNFpFa1Z6aXo4eWdlN3A3M3VleFpJaEE3d0pWMzI4K1lJRlRHZDNqMDNQdkl3REFhbi8rZnVwOWhHdkdPcHhoRDhDUkRSUUYvUTlpNkFPUXFITU05TGx6UXg4QXZ1c1FBL3Zlb2NFUEFKZnRHQUw3M0pIQkR3REw3UkFDYmUvQTRBZUE3UnFHUUpzYk52Z0JvSjRHSWZDdjJqZG8rQU5BWlExbWE5MEFNUHdCb0kzS003Yk9Tc0hnQjREOVZIaEo0UDROZ09FUEFQdXFNSHZ2Q3dEREh3RDZ1SE1HYnc4QXd4OEErcnBqRm04TEFNTWZBTWF3Y1NhdkR3RERId0RHc21FMnJ3c0F3eDhBeHJSeVJpOFBBTU1mQU1hMllsYlgveVJBQUdCNHl3TEExVDhBekdIaHpMNGRBSVkvQU14bHdleStIZ0NHUHdETTZjWU05eDRBQUFoME9RQmMvUVBBM0s3TWNoc0FBQWgwUGdCYy9RUEFNVnlZNlRZQUFCRG8xd0J3OVE4QXgzSm10dHNBQUVDZ253UEExVDhBSE5PTEdXOERBQUNCQkFBQUJQb2VBTmIvQUhCc1A4eDZHd0FBQ0NRQUFDRFFYd0ZnL1E4QUdmNmUrVFlBQUJCSUFBQkFJQUVBQUlFRUFBQUVPbmtESUFEa3NRRUFnRUFDQUFBQ0NRQUFDQ1FBQUNDUUFBQ0FRS2YvL3ZzLy9nb0FBTUxZQUFCQUlBRUFBSUVFQUFBRUVnQUFFRWdBQUVBZ0FRQUFnUVFBQUFRU0FBQVFTQUFBUUNBQkFBQ0JCQUFBQkJJQUFCQklBQUJBSUFFQUFJRUVBQUFFRWdBQUVFZ0FBRUFnQVFBQWdRUUFBQVFTQUFBUVNBQUFRQ0FCQUFDQkJBQUFCQklBQUJCSUFBQkFJQUVBQUlFRUFBQUVFZ0FBRUVnQUFFQWdBUUFBZ1FRQUFBUVNBQUFRU0FBQVFDQUJBQUNCQkFBQUJCSUFBQkJJQUFCQUlBRUFBSUVFQUFBRUVnQUFFRWdBQUVBZ0FRQUFnUVFBQUFRU0FBQVFTQUFBUUtEVDgvL0tjKzlEQUFEN3NnRUFnRUFDQUFBQ0NRQUFDQ1FBQUNDUUFBQ0FRQUlBQUFJSkFBQUlKQUFBSUpBQUFJQkFBZ0FBQWdrQUFBZ2tBQUFna0FBQWdFQUNBQUFDQ1FBQUNDUUFBQ0NRQUFDQVFBSUFBQUlKQUFBSUpBQUFJSkFBQUlCQUFnQUFBZ2tBQUFna0FBQWdrQUFBZ0VBQ0FBQUNDUUFBQ0NRQUFDQ1FBQUNBUUFJQUFBSUpBQUFJSkFBQUlKQUFBSUJBQWdBQUFna0FBQWdrQUFBZ2tBQUFnRUFDQUFBQ0NRQUFDQ1FBQUNDUUFBQ0FRQUlBQUFJSkFBQUlKQUFBSUpBQUFJQkFwL0w0OU56N0VBREF2bXdBQUNDUUFBQ0FRQUlBQUFJSkFBQUk5TkQ3QUdtZW54NTdINEdKblg3L3MvY1JidkljNXg0elBNZVB3Z1lBQUFJSkFBQUlKQUFBSUpBQUFJQkFBZ0FBQWdrQUFBZ2tBQUFna0FBQWdFQUNBQUFDQ1FBQUNDUUFBQ0NRQUFDQVFBSUFBQUlKQUFBSUpBQUFJSkFBQUlCQUFnQUFBZ2tBQUFna0FBQWdrQUFBZ0VBQ0FBQUNDUUFBQ0NRQUFDQ1FBQUNBUUFJQUFBSUpBQUFJSkFBQUlKQUFBSUJBQWdBQUFna0FBQWdrQUFBZ2tBQUFnRUFDQUFBQ0NRQUFDQ1FBQUNDUUFBQ0FRQUlBQUFJSkFBQUlKQUFBSUpBQUFJQkFBZ0FBQWdrQUFBZ2tBQUFna0FBQWdFQUNBQUFDQ1FBQUNDUUFBQ0NRQUFDQVFBSUFBQUlKQUFBSUpBQUFJSkFBQUlCQUFnQUFBZ2tBQUFna0FBQWdrQUFBZ0VBQ0FBQUNDUUFBQ0NRQUFDQ1FBQUNBUUFJQUFBSUpBQUFJSkFBQUlKQUFBSUJBQWdBQUFqMzBQZ0RiZmZ6OHRmY1JXT2p0bTFlOWp6QWR6Kzk1ZUg3UHlRWUFBQUlKQUFBSUpBQUFJSkFBQUlCQUFnQUFBZ2tBQUFna0FBQWdrQUFBZ0VBQ0FBQUNDUUFBQ0NRQUFDQ1FBQUNBUUw0TWFHSytnSU1qOC95R3Rtd0FBQ0NRQUFDQVFBSUFBQUlKQUFBSUpBQUFJSkFBQUlCQUFnQUFBZ2tBQUFna0FBQWdrQUFBZ0VBQ0FBQUNDUUFBQ0NRQUFDQ1FBQUNBUUFJQUFBSUpBQUFJSkFBQUlKQUFBSUJBQWdBQUFna0FBQWdrQUFBZ2tBQUFnRUFDQUFBQ0NRQUFDQ1FBQUNDUUFBQ0FRQUlBQUFJSkFBQUlKQUFBSUpBQUFJQkFBZ0FBQWdrQUFBZ2tBQUFna0FBQWdFQUNBQUFDQ1FBQUNDUUFBQ0NRQUFDQVFBSUFBQUk5OUQ0QTIzMzgvTFgzRVZqbzdadFh2WTh3SGMvdmVYaCt6OGtHQUFBQ0NRQUFDQ1FBQUNDUUFBQ0FRQUlBQUFJSkFBQUlKQUFBSUpBQUFJQkFBZ0FBQWdrQUFBZ2tBQUFna0FBQWdFQytER2hpdm9DREkvUDhoclpzQUFBZ2tBQUFnRUFDQUFBQ0NRQUFDQ1FBQUNDUUFBQ0FRQUlBQUFJSkFBQUlKQUFBSUpBQUFJQkFBZ0FBQWdrQUFBZ2tBQUFna0FBQWdFQUNBQUFDQ1FBQUNDUUFBQ0NRQUFDQVFBSUFBQUlKQUFBSUpBQUFJSkFBQUlCQUFnQUFBZ2tBQUFna0FBQWdrQUFBZ0VBQ0FBQUNDUUFBQ0NRQUFDQ1FBQUNBUUFJQUFBSUpBQUFJSkFBQUlKQUFBSUJBQWdBQUFna0FBQWdrQUFBZ2tBQUFnRUFDQUFBQ1BmUStBTnQ5L1B5MTl4Rlk2TzJiVjcyUE1CM1A3M2w0ZnMvSkJnQUFBZ2tBQUFna0FBQWdrQUFBZ0VBQ0FBQUNDUUFBQ0NRQUFDQ1FBQUNBUUFJQUFBSUpBQUFJSkFBQUlKQUFBSUJBdmd4b1lyNkFneVB6L0lhMmJBQUFJSkFBQUlCQUFnQUFBZ2tBQUFna0FBQWdrQUFBZ0VBQ0FBQUNDUUFBQ0NRQUFDQ1FBQUNBUUFJQUFBSUpBQUFJSkFBQUlKQUFBSUJBQWdBQUFna0FBQWdrQUFBZ2tBQUFnRUFDQUFBQ0NRQUFDQ1FBQUNDUUFBQ0FRQUlBQUFJSkFBQUlKQUFBSUpBQUFJQkFBZ0FBQWdrQUFBZ2tBQUFna0FBQWdFQUNBQUFDQ1FBQUNDUUFBQ0NRQUFDQVFBSUFBQUlKQUFBSUpBQUFJSkFBQUlCQUFnQUFBZ2tBQUFna0FBQWdrQUFBZ0VBQ0FBQUNDUUFBQ0NRQUFDQ1FBQUNBUUFJQUFBSTk5RDRBQURUeCtzTjkvLzdMdXpybkdKUUFBR0JlOXc3NXJiZDlnRGdRQUFETW8rWEFYK1BsT1NZTUFnRUF3TmhHR2ZyWC9IakdTV0pBQUFBd25obUcvaVdUeElBQUFHQWNNdy8rYzc3OVBBT0dnQUFBb0t2VEg3LzFQa0o3QTI0RkJBQUFYVVFNL25NRzJRb0lBQUIyRlR2NFgrb2NBZ0lBZ0YwWS9CZDBDZ0VmQlF4QWM0Yi9BanUvQWRJR0FJQm1EUDZWZHR3RzJBQUEwSVRoZjRjZHRnRTJBQUJVWmZCWDBuZ2JZQU1BUURXR2Z3T050Z0VDQUlBcURQK0dHa1NBbHdBQXVJdkJ2NVBLTHduWUFBQ3dtZUhmUWFWdGdBQUFZQlBEdjZNS0VTQUFBRmpOOEIvQW5SRWdBQUJZeGZBZnlCMFJJQUFBV016d0g5REdDQkFBQUN4aStBOXNRd1FJQUFCdU12d25zRElDQkFBQVZ4bitFMWtSQVFJQWdJc00vd2t0akFBQkFNQlpodi9FRmtTQUFBQ0FRQUlBZ0YrNCtqK0FHMXNBQVFEQVR3ei9BN2tTQVFJQWdIOFkvZ2QwSVFJRUFBQUVFZ0FBbEZKYy9SL2FtUzJBQUFEQThPL2crZjJuZmUvd1JRU2N5dVBUODc0bkFHQTRGYjVmbnVWK0hQNjd4dGVYZC8vOHB3MEFRRHJEZjFjdnIveDMzUVQ4OEZnTEFJQmtodit1TGczN0hoRWdBQUJnQjdlRy9ON3ZDUkFBQUtsYy9lOW02WERmTFFKZWZ4QUFBRENTdlNKQUFBQWtjdlcvbXkwRGZZOElFQUFBME1nOWc3eDFCQWdBZ0RTdS9uZFJZNEMzakFBQkFBQ1YxUnpjclNKQUFBQkFSUzBHZG92YkZBQUFTYXovbTJxNXNxOTkyd0lBQUNyWTQ1MzdOZTlEQUFDa2NQWGZ6SjZmNGxmcnZnUUFBTnhoNzQvd3JmWHRnUUlBQUNaUjg2dURCUUJBQXV2L0p2YTgrcTg1L0VzUkFBQ3d5Y3pEdnhRQkFBQ3J6VDc4U3hFQUFNZG4vVi9WM20vNmEwVUFBTUJDczc3ai94d0JBQUFMSEduNGx5SUFBT0Ntb3czL1VnUUF3TEY1L2Y5dVJ4eitwUWdBQUxqb3FNTy9GQUVBQUVQWWMvaVhJZ0FBNEt3ai9LMy9OUUlBQUY0NCt2QXZSUUFBd0U4U2huOHBBZ0NBbmN6d0NYb3puTEdXVTNsOGV1NTlDQUFhR09oUEFGOE8xcDVYdnBjYytSMy81OWdBQUxDNzBhNjAwNFovS1FJQWdNWXVEZGZuOTUrR0NJSEU0VitLQUFDZ3M1NFJrRHI4U3hFQUFEUzBkTUQyMkFZa0QvOVNCQUFBald3WnNIc041ZlRoWDRvQUFHQXdvN3czb0pZUmgzOHBBZ0NBQm1vTThGWWhrUEpCUDdjSUFBQ3FxajFnYTk2ZTRmK2RBQUJnZURXMkFZYi96d1FBQU5XMEhySmJiLzlJN3ltb1JRQUFNSlcxMndEditEOVBBQUJReFloL3gyLzRYeVlBQUxoYnJ4WDd0VzJBNFgrZEFBQmdlaTlEd1BDLzdhSDNBUUNZMjBodnNPdHhsaG1IZnltbG5NcmowM1B2UXdEUXlPc1B1OTNWU0NHd2wxbUhmeWxlQWdDZ2twbUg0UmF6Lzd3Q0FJQnFUbi84TnYxZ1hPSUlQNk1BQUtDNkl3eklTNDd5c3drQUFKcEkyUWJNU2dBQTBOU1JJdUJJUDRzQUFLQzVJMndEWmovL1MvNE1FT0RvZHZ4VHdLVm0rNVBCb3czL1Vtd0FBT2hncG9FNjAxblhFQUFBZERIRHl3S2puKzhlQWdDQXJrWWRzcU9lcXhidkFRQklNT0Q3QU00WjViMEJSeC8rcGRnQUFEQ1FFUWJ2Q0dmWWd3QUFZQ2kxM2h1dzVUWlNobjhwQWdBZ3c1ZDN2VSt3V28wUVNCcm9hd2tBQUlaMjc1WDgwbitmRmdzQ0FJRGhyZGtHblB2L2J2M2J0T0ZmaWdBQXlESGh5d0F2M1RPb0wvM2J4T0ZmaWdBQVlETFh0Z0Zyci9SVGgzOHBBZ0FneXdHMkFOOXNIZDdmL2wzeThDL0ZCd0VCNUpua1E0SFdlSDcvS1g2Z3IyVURBTUQwRFAvMUJBQkFtZ085RE1CMkFnQUFBZ2tBZ0VTMkFQRUVBQUFFRWdBQXFXd0JjbjE1SndBQUlKRUFBRWhtQzVEbjc4ZGNBQUNrRXdFNWZuaXNCUUFBQkJJQUFOZ0NKSGp4R0FzQUFQNGlBbzdyekdNckFBQWdrQUFBNER0YmdPTzU4SmdLQUFCK0pnS080OHBqS1FBQStKVUltTitOeDFBQUFFQWdBUURBZWJZQTgxcncyQWtBQUM0VEFmTlorSmdKQUFDdUV3SHpXUEZZQ1FBQWJoTUI0MXY1R0FrQUFKWVJBZVBhOE5nSUFBQ1dFd0hqMmZpWUNBQUExaEVCNDdqanNSQUFBS3duQXZxNzh6RVFBQUJzSXdMNnFmQzdGd0FBYkNjQzlsZnBkLzVRNVZZQXlQVnRJTDMrMFBjY1IxYzV0bXdBQUtqRE5xQ2RCcjliQVFCQVBTS2d2a2EvVXk4QkFGQ1hsd1RxYUJ4VE5nQUF0R0Vic04wT3Z6c2JBQURhc1ExWVo4ZG9zZ0VBb0QzYmdOdDIvaDNaQUFDd0Q5dUE4enJGMGY4QnRjOUJsS25JVERjQUFBQUFTVVZPUks1Q1lJST0iLCAic2l6ZXMiOiAiNTEyeDUxMiIsICJ0eXBlIjogImltYWdlL3BuZyJ9XSwgInRoZW1lX2NvbG9yIjogIiMwMDU3QTgiLCAiYmFja2dyb3VuZF9jb2xvciI6ICIjMDA1N0E4IiwgImRpc3BsYXkiOiAic3RhbmRhbG9uZSJ9">
+  <meta name="theme-color" content="#0057A8">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="CEIP Cap.">
+<title>CEIP Capitulaciones – Asistente de Planificación</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:wght@700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --azul:       #0057A8;
+    --azul-vivo:  #0072D6;
+    --azul-claro: #E8F1FB;
+    --rojo:       #C8102E;
+    --rojo-claro: #FBE9EC;
+    --verde:      #007A3D;
+    --verde-claro:#E6F4EC;
+    --amarillo:   #FFD100;
+    --blanco:     #FFFFFF;
+    --gris-bg:    #F4F6FA;
+    --gris-borde: #D5DCE8;
+    --texto:      #0D1B2A;
+    --muted:      #5A6880;
+  }
+
+  *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--gris-bg);
+    color: var(--texto);
+    min-height: 100vh;
+  }
+
+  /* ── TOP BAR ── */
+  .top-bar {
+    background: var(--azul);
+    height: 6px;
+    background: linear-gradient(90deg, var(--azul) 0%, var(--azul-vivo) 40%, var(--rojo) 70%, var(--amarillo) 100%);
+  }
+
+  /* ── HEADER ── */
+  header {
+    background: var(--blanco);
+    border-bottom: 1px solid var(--gris-borde);
+    padding: 2.2rem 2.5rem 2rem;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 1.5rem;
+    position: relative;
+  }
+
+  .escudo {
+    width: 68px; height: 68px;
+    background: var(--azul);
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 2rem;
+    flex-shrink: 0;
+    box-shadow: 0 4px 16px rgba(0,87,168,0.25);
+  }
+
+  .header-text h1 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    color: var(--azul);
+    line-height: 1.15;
+    font-weight: 900;
+  }
+  .header-text h1 span { color: var(--rojo); }
+  .header-text p {
+    color: var(--muted);
+    font-size: 0.88rem;
+    margin-top: 0.3rem;
+    font-weight: 400;
+  }
+
+  .header-badge {
+    background: var(--azul-claro);
+    border: 1.5px solid var(--azul);
+    color: var(--azul);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 6px;
+    white-space: nowrap;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: linear-gradient(135deg, var(--azul) 0%, #003D7A 100%);
+    padding: 3rem 2.5rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -80px;
+    width: 300px; height: 300px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.05);
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -40px; left: -60px;
+    width: 220px; height: 220px;
+    border-radius: 50%;
+    background: rgba(255,209,0,0.08);
+  }
+  .hero-inner { position: relative; z-index: 1; max-width: 680px; margin: 0 auto; }
+  .hero-label {
+    display: inline-block;
+    background: var(--amarillo);
+    color: var(--texto);
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 5px 16px;
+    border-radius: 4px;
+    margin-bottom: 1.2rem;
+  }
+  .hero h2 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(1.6rem, 4vw, 2.6rem);
+    color: var(--blanco);
+    line-height: 1.2;
+    margin-bottom: 0.8rem;
+    font-weight: 900;
+  }
+  .hero h2 em { color: var(--amarillo); font-style: normal; }
+  .hero p {
+    color: rgba(255,255,255,0.75);
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+
+  /* ── MAIN ── */
+  main {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 5rem;
+  }
+
+  /* ── SECTION TITLE ── */
+  .sec-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 1.6rem;
+  }
+  .sec-title-icon {
+    width: 36px; height: 36px;
+    background: var(--azul);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    color: white;
+    font-size: 1rem;
+    flex-shrink: 0;
+  }
+  .sec-title h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--texto);
+  }
+  .sec-title h3 span { color: var(--muted); font-weight: 400; font-size: 0.88rem; margin-left: 6px; }
+
+  /* ── STEPS ── */
+  .steps { display: grid; gap: 0.75rem; margin-bottom: 2.5rem; }
+
+  .step {
+    background: var(--blanco);
+    border: 1.5px solid var(--gris-borde);
+    border-radius: 14px;
+    padding: 1.3rem 1.6rem;
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    gap: 1.2rem;
+    align-items: start;
+    transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+    animation: fadeUp 0.45s ease both;
+  }
+  .step:hover {
+    border-color: var(--azul-vivo);
+    box-shadow: 0 6px 24px rgba(0,87,168,0.12);
+    transform: translateY(-2px);
+  }
+  .step:nth-child(1){animation-delay:.05s}
+  .step:nth-child(2){animation-delay:.1s}
+  .step:nth-child(3){animation-delay:.15s; border-color: #B8D4F0;}
+  .step:nth-child(3):hover{border-color:var(--azul-vivo)}
+  .step:nth-child(4){animation-delay:.2s}
+  .step:nth-child(5){animation-delay:.25s}
+
+  .step-num {
+    width: 48px; height: 48px;
+    border-radius: 12px;
+    background: var(--azul);
+    color: white;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Fraunces', serif;
+    font-size: 1.4rem;
+    font-weight: 900;
+    flex-shrink: 0;
+  }
+  .step:nth-child(3) .step-num { background: var(--rojo); }
+  .step:nth-child(5) .step-num { background: var(--verde); }
+
+  .step h4 {
+    font-weight: 700;
+    font-size: 0.97rem;
+    color: var(--texto);
+    margin-bottom: 0.3rem;
+  }
+  .step p {
+    font-size: 0.86rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+  .step p strong { color: var(--texto); }
+  .step p em { color: var(--azul-vivo); font-style: normal; font-weight: 500; }
+
+  .chips { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.7rem; }
+  .chip {
+    background: var(--azul-claro);
+    color: var(--azul);
+    border: 1px solid #BDD4EE;
+    border-radius: 6px;
+    padding: 3px 10px;
+    font-size: 0.74rem;
+    font-weight: 600;
+  }
+  .chip.red { background: var(--rojo-claro); color: var(--rojo); border-color: #F0BFCA; }
+  .chip.green { background: var(--verde-claro); color: var(--verde); border-color: #A8D8BB; }
+
+  /* ── CTA BLOCK ── */
+  .cta-block {
+    background: var(--blanco);
+    border: 2px solid var(--azul);
+    border-radius: 18px;
+    padding: 2.5rem 2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    animation: fadeUp 0.45s ease 0.3s both;
+  }
+  .cta-block::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, var(--azul), var(--azul-vivo), var(--rojo), var(--amarillo));
+  }
+  .cta-block h2 {
+    font-family: 'Fraunces', serif;
+    font-size: 1.7rem;
+    font-weight: 900;
+    color: var(--azul);
+    margin-bottom: 0.5rem;
+  }
+  .cta-block > p {
+    color: var(--muted);
+    font-size: 0.9rem;
+    margin-bottom: 1.8rem;
+    line-height: 1.65;
+  }
+  .cta-block > p strong { color: var(--texto); }
+
+  .cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--azul);
+    color: white;
+    border: none;
+    padding: 1rem 2.4rem;
+    border-radius: 10px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    box-shadow: 0 4px 18px rgba(0,87,168,0.35);
+    text-decoration: none;
+  }
+  .cta-btn:hover {
+    background: var(--azul-vivo);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 28px rgba(0,87,168,0.45);
+  }
+  .cta-btn:active { transform: scale(0.98); }
+  .cta-btn.success {
+    background: var(--verde);
+    box-shadow: 0 4px 18px rgba(0,122,61,0.35);
+  }
+
+  .status-msg {
+    margin-top: 0.6rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #34d399;
+    opacity: 0;
+    transform: translateY(4px);
+    transition: all 0.3s;
+  }
+  .status-msg.show { opacity: 1; transform: translateY(0); }
+
+  /* ── DUAL BUTTON LAYOUT ── */
+  .btn-row {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 1.2rem;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+  }
+  .btn-card {
+    background: rgba(255,255,255,0.06);
+    border: 1.5px solid rgba(255,255,255,0.15);
+    border-radius: 14px;
+    padding: 1.4rem 1.2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    text-align: center;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .btn-card:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.3); }
+  .btn-card-gemini { border-color: rgba(66,133,244,0.35); background: rgba(66,133,244,0.06); }
+  .btn-card-gemini:hover { background: rgba(66,133,244,0.12); border-color: rgba(66,133,244,0.5); }
+  .btn-card-label {
+    display: flex; align-items: center; gap: 6px;
+    font-weight: 700; font-size: 0.9rem; color: white;
+  }
+  .gemini-label { color: #93C5FD; }
+  .btn-card-desc {
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.4;
+    margin-bottom: 0.4rem;
+  }
+  .btn-divider {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: rgba(255,255,255,0.3);
+    letter-spacing: 1px;
+    position: relative;
+    z-index: 1;
+  }
+  .btn-gpt  { background: var(--azul); box-shadow: 0 4px 16px rgba(0,87,168,0.45); font-size: 0.9rem; padding: 0.75rem 1.4rem; }
+  .btn-gpt:hover  { background: var(--azul-vivo); }
+  .btn-gemini { background: linear-gradient(135deg, #4285F4 0%, #0F9D58 100%); box-shadow: 0 4px 16px rgba(66,133,244,0.4); font-size: 0.9rem; padding: 0.75rem 1.4rem; }
+  .btn-gemini:hover { filter: brightness(1.12); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(66,133,244,0.5); }
+
+  /* ── NOTES ROW ── */
+  .notes-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    margin-bottom: 0;
+  }
+  .note {
+    border-radius: 10px;
+    padding: 1rem 1.1rem;
+    font-size: 0.84rem;
+    line-height: 1.6;
+    animation: fadeUp 0.45s ease 0.35s both;
+  }
+  .note-green {
+    background: #EBF7F2;
+    border: 1.5px solid #A8D8BB;
+    border-left: 4px solid var(--verde);
+    color: #1A4A30;
+  }
+  .note-blue {
+    background: #EBF3FE;
+    border: 1.5px solid #93C5FD;
+    border-left: 4px solid #4285F4;
+    color: #1A2F5A;
+  }
+  .note strong { color: var(--texto); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--azul);
+    color: rgba(255,255,255,0.55);
+    text-align: center;
+    padding: 1.2rem;
+    font-size: 0.76rem;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+  }
+  footer strong { color: rgba(255,255,255,0.85); }
+
+  @keyframes fadeUp {
+    from { opacity:0; transform: translateY(18px); }
+    to   { opacity:1; transform: translateY(0); }
+  }
+
+  #promptData { display: none; }
+  #promptGemini { display: none; }
+
+  @media (max-width: 640px) {
+    header { grid-template-columns: auto 1fr; }
+    .header-badge { display: none; }
+    .hero { padding: 2rem 1.2rem; }
+    .btn-row { grid-template-columns: 1fr; }
+    .btn-divider { text-align: center; }
+    .notes-row { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div id="promptData">Actúa como un experto en normativa educativa andaluza (Orden de 30 de mayo de 2023). Ya tienes cargada en tu base de conocimientos la Orden de 30 de mayo de 2023 por la que se establece la ordenación y el currículo de la Educación Primaria en Andalucía. Úsala como fuente principal y única para extraer los Criterios de Evaluación y Saberes Básicos. Tu tarea es procesar la imagen o PDF de la planificación semanal que voy a subir siguiendo estos pasos:
+1. Identificación: Extrae el contenido de Lengua y Matemáticas. Yo te indicaré el CURSO (de 1º a 6º de Primaria) si no aparece en el documento.
+2. Vinculación Curricular: Para cada sesión, busca en la Orden de 30 de mayo que tienes en tu base de conocimientos el Criterio de Evaluación más directamente observable y su Saber Básico asociado.
+3. Rigor Total: Debes copiar el texto LITERAL de la Orden, sin resumir ni cambiar ni una coma. Usa la numeración oficial (ej. LC.3.9.1 / MA.3.A.1.1).
+4. Generación de PDF: Crea un documento titulado "RELACIÓN ENTRE PLANIFICACIÓN SEMANAL Y CRITERIOS DE EVALUACIÓN – CEIP CAPITULACIONES".
+   * Usa formato A4 horizontal.
+   * Estructura: Una tabla por área con las columnas: | Día | Contenido | Criterio | Texto Literal Criterio | Saber Básico |.
+5. Prioridad: Céntrate en lo que el alumno hace (el producto final de la sesión).
+¿Entendido? Si es así, confírmame y dime de qué curso es la planificación que voy a subir.</div>
+
+<div id="promptGemini">Actúa como un experto en normativa educativa andaluza. Tu tarea es procesar la imagen o PDF de la planificación semanal que voy a subir siguiendo estos pasos:
+1. Identificación: Extrae el contenido de Lengua y Matemáticas. Yo te indicaré el CURSO (de 1º a 6º de Primaria) si no aparece en el documento.
+2. Fuente normativa: Busca en internet la Orden de 30 de mayo de 2023 de la Junta de Andalucía por la que se establece la ordenación y el currículo de la Educación Primaria en Andalucía (BOJA núm. 106, de 6 de junio de 2023). Es imprescindible que accedas al texto oficial completo antes de continuar, ya que todos los criterios y saberes deben extraerse de ese documento.
+3. Vinculación Curricular: Para cada sesión, localiza en esa Orden el Criterio de Evaluación más directamente observable y su Saber Básico asociado al curso indicado.
+4. Rigor Total: Debes copiar el texto LITERAL de la Orden, sin resumir ni cambiar ni una coma. Usa la numeración oficial (ej. LC.3.9.1 / MA.3.A.1.1). No inventes ni parafrasees criterios.
+5. Generación de PDF: Crea un documento titulado "RELACIÓN ENTRE PLANIFICACIÓN SEMANAL Y CRITERIOS DE EVALUACIÓN – CEIP CAPITULACIONES".
+   * Usa formato A4 horizontal.
+   * Estructura: Una tabla por área con las columnas: | Día | Contenido | Criterio | Texto Literal Criterio | Saber Básico |.
+6. Prioridad: Céntrate en lo que el alumno hace (el producto final de la sesión).
+¿Entendido? Confirma que has localizado la Orden de 30 de mayo de 2023 y dime de qué curso es la planificación que voy a subir.</div>
+
+<div class="top-bar"></div>
+
+<header>
+  <div class="escudo">🏫</div>
+  <div class="header-text">
+    <h1>CEIP Capitulaciones <span>·</span> Granada</h1>
+    <p>Junta de Andalucía · Consejería de Desarrollo Educativo y Formación Profesional</p>
+  </div>
+  <div class="header-badge">Herramienta Docente</div>
+</header>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-label">Asistente de Planificación Semanal</div>
+    <h2>Vinculación automática con<br><em>Criterios de Evaluación</em></h2>
+    <p>Sube tu planning, indica el curso y la semana.<br>El GPT genera el documento listo para <strong style="color:white">Séneca</strong> en segundos.</p>
+  </div>
+</div>
+
+<main>
+
+  <div class="sec-title">
+    <div class="sec-title-icon">📋</div>
+    <h3>Pasos a seguir <span>— sigue el proceso en orden</span></h3>
+  </div>
+
+  <div class="steps">
+
+    <div class="step">
+      <div class="step-num">1</div>
+      <div>
+        <h4>Pulsa el botón principal</h4>
+        <p>Al hacer clic, el prompt se copiará <strong>automáticamente</strong> al portapapeles y el GPT del colegio se abrirá en una nueva pestaña.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">2</div>
+      <div>
+        <h4>Pega el prompt en el chat del GPT</h4>
+        <p>En el campo de texto del GPT, pulsa <em>Ctrl+V</em> (o Cmd+V en Mac) para pegar. Espera a que el sistema confirme que ha entendido las instrucciones.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">3</div>
+      <div>
+        <h4>Adjunta la foto o el PDF de tu planning</h4>
+        <p>Usa el icono del <strong>clip</strong> en el chat para adjuntar tu archivo. Válido para fotografías del cuaderno o documentos PDF.</p>
+        <div class="chips">
+          <span class="chip">📷 Foto JPG / PNG</span>
+          <span class="chip red">📄 PDF</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">4</div>
+      <div>
+        <h4>Indica el curso y la semana</h4>
+        <p>Escribe en el chat: <em>"Es para 5º de Primaria, semana del 17 al 21 de junio"</em>. Especifica siempre el curso y las fechas exactas.</p>
+        <div class="chips">
+          <span class="chip">1º Primaria</span>
+          <span class="chip">2º Primaria</span>
+          <span class="chip">3º Primaria</span>
+          <span class="chip">4º Primaria</span>
+          <span class="chip">5º Primaria</span>
+          <span class="chip">6º Primaria</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">5</div>
+      <div>
+        <h4>Descarga el PDF generado</h4>
+        <p>El GPT creará un documento <strong>A4 horizontal</strong> con tablas separadas para Lengua y Matemáticas, incluyendo códigos oficiales y textos literales.</p>
+        <div class="chips">
+          <span class="chip green">✓ Formato Séneca</span>
+          <span class="chip green">✓ Códigos LC / MA</span>
+          <span class="chip green">✓ Texto literal oficial</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-block">
+    <h2>Comenzar ahora</h2>
+    <p>Elige tu asistente de IA. El prompt se copiará automáticamente.<br><strong>Solo tendrás que pegarlo con Ctrl+V en el chat.</strong></p>
+
+    <div class="btn-row">
+
+      <div class="btn-card">
+        <div class="btn-card-label">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+          GPT del CEIP
+        </div>
+        <div class="btn-card-desc">La Orden está en su memoria. No necesitas subirla.</div>
+        <button class="cta-btn btn-gpt" id="ctaBtnGPT" onclick="launch('gpt')">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          Abrir GPT del CEIP
+        </button>
+        <div class="status-msg" id="statusGPT">✓ Prompt copiado — pégalo con Ctrl+V</div>
+      </div>
+
+      <div class="btn-divider">ó</div>
+
+      <div class="btn-card btn-card-gemini">
+        <div class="btn-card-label gemini-label">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          Google Gemini
+        </div>
+        <div class="btn-card-desc">Buscará la Orden de 30 de mayo en internet automáticamente.</div>
+        <button class="cta-btn btn-gemini" id="ctaBtnGemini" onclick="launch('gemini')">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          Abrir Gemini
+        </button>
+        <div class="status-msg" id="statusGemini">✓ Prompt copiado — pégalo con Ctrl+V</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Notes -->
+  <div class="notes-row">
+    <div class="note note-green">
+      <strong>✅ GPT del CEIP:</strong> La Orden de 30 de mayo de 2023 está incluida en su base de conocimientos. <strong>No es necesario subirla.</strong>
+    </div>
+    <div class="note note-blue">
+      <strong>🔍 Gemini:</strong> El prompt le indica que busque la Orden de 30 de mayo en internet. Asegúrate de usar <strong>Gemini 1.5 Pro</strong> o superior para mejores resultados.
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <strong>CEIP Capitulaciones</strong> · Herramienta de uso docente interno · Junta de Andalucía · Normativa: Orden de 30 de mayo de 2023
+</footer>
+
+<script>
+const PROMPT_GPT    = document.getElementById('promptData').textContent.trim();
+const PROMPT_GEMINI = document.getElementById('promptGemini').textContent.trim();
+const GPT_URL       = 'https://chatgpt.com/g/g-690a4f16ef6881919b013f61e39103da-ceip-capitulaciones';
+const GEMINI_URL    = 'https://gemini.google.com/';
+
+function launch(target) {
+  const isGPT   = target === 'gpt';
+  const prompt  = isGPT ? PROMPT_GPT : PROMPT_GEMINI;
+  const url     = isGPT ? GPT_URL    : GEMINI_URL;
+  const btn     = document.getElementById(isGPT ? 'ctaBtnGPT' : 'ctaBtnGemini');
+  const msg     = document.getElementById(isGPT ? 'statusGPT' : 'statusGemini');
+  const origHTML = btn.innerHTML;
+
+  navigator.clipboard.writeText(prompt).then(() => {
+    btn.classList.add('success');
+    btn.innerHTML = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> ¡Prompt copiado!`;
+    msg.classList.add('show');
+    setTimeout(() => { window.open(url, '_blank'); }, 700);
+    setTimeout(() => {
+      btn.classList.remove('success');
+      btn.innerHTML = origHTML;
+      msg.classList.remove('show');
+    }, 5000);
+  }).catch(() => {
+    window.open(url, '_blank');
+    msg.textContent = '⚠ No se pudo copiar automáticamente.';
+    msg.style.color = '#C8102E';
+    msg.classList.add('show');
+  });
+}
+</script>
+</body>
+</html>
